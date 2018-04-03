@@ -1,11 +1,28 @@
-{% include 'header.html' %}
-<body height=80%>
-<div width=100%  style="background-color:#eee;">
-index.html
-{{ data }}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}" />
+
+{% block title %} {% include 'header.html' %} {% endblock %}
+
+</head>
+
+<body>
+
+{% block content %}
+<div id="content">
+    <div id="search">
+        <input type="text" placeholder="검색어 입력">
+        <button type="button" onclick='location.href='#''>검색</button>
+    </div>
 </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
 </body>
-{% include 'footer.html' %}
-
-
-
+</html>

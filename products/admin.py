@@ -6,4 +6,4 @@ from .models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('prd_no', 'prd_nm', 'prd_img', 'content')
 
-admin.site.register(Product)
+admin.site.register(Product, ProductAdmin)

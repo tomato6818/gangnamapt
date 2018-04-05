@@ -8,18 +8,7 @@
 <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
 <script type="text/javascript">
 $(function(){
-    /* submit 테스트 */
-    $('#sch_btn').click(function(){
-        var keyword = $('#sch_keyword').val()
-        alert("검색어 : "+keyword);
-    })
 
-    $("#sch_keyword").keydown(function (key) {
-        if(key.keyCode == 13){
-            var keyword = $('#sch_keyword').val()
-            alert("검색어 : "+keyword);
-        }
-    });
 });
 </script>
 
@@ -29,14 +18,7 @@ $(function(){
 
 <body>
 
-{% block content %}
-<div id="content">
-    <div id="search">
-        <input type="text" id="sch_keyword" placeholder="검색어 입력">
-        <button type="button" id="sch_btn">검색</button>
-    </div>
-</div>
-{% endblock %}
+{% block content %}{% endblock %}
 
 {% block footer %} {% include 'footer.html' %} {% endblock %}
 </body>

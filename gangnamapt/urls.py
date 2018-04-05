@@ -17,11 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
 
-from products.views import main
-
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^main/', main),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
 ]

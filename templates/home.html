@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div id="content">
+
+<h1>Product Search</h1>
+<div id="search">
+<form action="." method="post" > {% csrf_token %}
+    {{ form.as_table }}
+    <input id="submit" type="submit" value="검색" />
+</form>
+</div>
+
+<br/><br/>
+
+{% if object_list %}
+<table class="product-list">
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Content</th>
+        <th>Create</th>
+    </tr>
+{% for product in object_list %}
+    <tr>
+        <td>{{ product.prd_no }}</td>
+        <td><a href="#">{{ product.prd_nm }}</a></td>
+        <td>{{ product.prd_img }}</td>
+        <td>{{ product.content }}</td>
+        <td>{{ product.create_dt }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+{% elif search_term %}
+<b><i>Search Word({{ search_term }}) Not Found !</i></b>
+{% endif %}
+
+
+</div>
+{% endblock %}

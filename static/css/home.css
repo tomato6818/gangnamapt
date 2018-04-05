@@ -16,11 +16,9 @@ div#header {
 
 div#content {
     position:absolute;
-    top:50%;
-    left:50%;
-    overflow:hidden;
-    margin-top:-80px;
-    margin-left:-180px;
+    top:70px;
+    left:50px;
+    right:50px;
 }
 
 div#search {
@@ -81,6 +79,13 @@ table {
 td, th {
     line-height: 18px;
     border-bottom: 1px solid #eee;
+    vertical-align: top;
+    padding: 5px 15px;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+table.product-list, table.product-list th, table.product-list td {
+    border: 1px solid #ccc
 }
 
 input:-ms-input-placeholder {color:#a8a8a8;}
@@ -96,13 +101,12 @@ input {
     float: left;
 }
 
-button {
-    width: 50px;
+input#submit {
+    width: 55px;
     height: 100%;
     border: 0px;
     background: tomato;
     outline: none;
-    float: right;
     color: #ffffff;
     cursor: pointer;
 }

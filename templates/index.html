@@ -5,18 +5,21 @@
 
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
 <script type="text/javascript">
-$(function(){
-
+$(document).ready(function(){
+    
 });
 </script>
 
-{% block title %} {% include 'header.html' %} {% endblock %}
+{% block title %} Gangnam Apt Project {% endblock %}
 
 </head>
 
 <body>
+
+{% include 'header.html' %}
 
 {% block content %}{% endblock %}
 

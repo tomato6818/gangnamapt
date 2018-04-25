@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block title %} Product List {% endblock %}
+
+{% block content %}
+<div id="content">
+
+<h2>Product List</h2>
+<h4><a href="{% url 'products:add' %}">[Add Product]</a></h4>
+
+{% if object_list %}
+<table class="product-list">
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Content</th>
+        <th>Create</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+{% for product in object_list %}
+    <tr>
+        <td>{{ product.prd_no }}</td>
+        <td><a href="#">{{ product.prd_nm }}</a></td>
+        <td>{{ product.prd_img }}</td>
+        <td>{{ product.content }}</td>
+        <td>{{ product.create_dt }}</td>
+        <td><a href="{% url 'products:update' product.id %}">Update</a></td>
+        <td><a href="{% url 'products:delete' product.id %}">Delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+{% else %}
+<b><i>Product Not Found !</i></b>
+{% endif %}
+
+</div>
+{% endblock %}

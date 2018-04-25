@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block title %} Product Form {% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+$(function(){
+    $("#id_prd_no").focus();
+
+    $('input[type=button][value=취소]').click(function(){
+        location.href = "{% url 'products:index' %}"
+    });
+});
+</script>
+
+<div id="content">
+    <h1>Product Create / Update</h1>
+
+    {% if form.is_multipart or formset.is_multipart %}
+    <form enctype="multipart/form-data" action="." method="post">
+    {% else %}
+    <form action="." method="post">
+    {% endif %}
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <p class="errornote">Wrong! Please correct the error below.</p>
+    {% endif %}
+
+    <p>This is a creation or update form for your product.</p>
+
+    <fieldset class="aligned">
+
+        <div class="form-row">
+            {{ form.prd_no.label_tag }} {{ form.prd_no }}
+        </div>
+
+        <div class="form-row">
+            {{ form.prd_nm.label_tag }} {{ form.prd_nm }}
+        </div>
+
+        <div class="form-row">
+            {{ form.content.label_tag }} {{ form.content }}
+        </div>
+
+        <div class="form-row">
+            {{ form.prd_img.label_tag }} {{ form.prd_img }}
+        </div>
+
+    </fieldset>
+
+    <div class="submit-row">
+        <input id="submit" type="button" value="취소"/>
+        <input id="submit" type="submit" value="등록"/>
+    </div>
+
+    </form>
+</div>
+{% endblock %}

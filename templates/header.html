@@ -2,8 +2,8 @@
 <script type="text/javascript">
 $(function(){
     $(".maintitle").click(function(){
-        location.href = "/"
-    })
+        location.href = "{% url 'home:index' %}"
+    });
 });
 </script>
 
@@ -11,6 +11,7 @@ $(function(){
     <h2 class="maintitle" style="cursor:pointer">Gangnam Apartment</h2>
     <h4 class="welcome">Welcome, <a href="#">gangnam</a> /
           <a href="#">Change Password</a> /
+          <a href="{% url 'products:index' %}">Admin</a> /
           <a href="#">Logout</a>
     </h4>
 </div>

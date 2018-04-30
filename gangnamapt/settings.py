@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': 'gangnamapt',
         'USER': 'gangnam',
         'PASSWORD': 'qwer1234',
-        'HOST': '',
-        'POST': '',
+        'HOST': '13.124.61.41',
+        'POST': '3306',
     }
 }
 
